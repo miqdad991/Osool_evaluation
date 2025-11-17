@@ -20,12 +20,16 @@ class DashboardController extends Controller
         $dateTo = $request->date_to ?? now()->toDateString();
 
         $users = User::with(['tasks' => function ($query) use ($sprintId, $dateFrom, $dateTo) {
-            $query->where('status', 'approved');
+            // Always filter by date range
+            $query->whereBetween('task_date', [$dateFrom, $dateTo]);
+
+            // Apply sprint filter only if sprint_id exists
             if ($sprintId) {
                 $query->where('sprint_id', $sprintId);
-            } else {
-                $query->whereBetween('task_date', [$dateFrom, $dateTo]);
             }
+
+            // Status filter
+            $query->where('status', 'approved');
         }])->paginate(15);
 
         $sprints = Sprint::all(); // For the dropdown filter

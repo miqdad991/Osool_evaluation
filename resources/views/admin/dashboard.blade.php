@@ -35,7 +35,6 @@
                     <th>User</th>
                     <th>Position</th>
                     <th>Tasks Done</th>
-                    <th>Average Score</th>
                     <th>Details</th>
                 </tr>
                 </thead>
@@ -49,7 +48,6 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->position->title ?? '-' }}</td>
                         <td>{{ $taskCount }}</td>
-                        <td>{{ number_format($avgScore, 1) }}</td>
                         <td>
                             <a href="{{ route('admin.dashboard.user_tasks', ['user_id' => $user->id, 'sprint_id' => request('sprint_id')]) }}" class="btn btn-sm btn-outline-info">
                                 View Tasks

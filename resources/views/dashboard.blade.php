@@ -18,9 +18,8 @@
             <!-- Average Score -->
             <div class="col-md-4">
                 <div class="card shadow-sm rounded p-3 bg-white">
-                    <h6>✅ Average Score</h6>
-                    <p><strong>Score:</strong> {{ $score !== null ? number_format($score, 1) : 'N/A' }}</p>
-                    <p>Total Tasks: <strong>{{ $taskCount }}</strong></p>
+                    <h6>✅ Total Tasks</h6>
+                    <p style="padding-bottom: 40px">Total Tasks: <strong>{{ $taskCount }}</strong></p>
                 </div>
             </div>
 
@@ -62,7 +61,6 @@
                             <th>ID</th>
                             <th>Task ID</th>
                             <th>Title</th>
-                            <th>Score</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -72,7 +70,6 @@
                                 <td>{{ $task->id }}</td>
                                 <td>{{ $task->task_id }}</td>
                                 <td>{{ $task->title }}</td>
-                                <td>{{ $task->average_score }}</td>
                                 <td>{{ $task->status }}</td>
                             </tr>
                         @endforeach

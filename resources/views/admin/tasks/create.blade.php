@@ -49,33 +49,6 @@
                             <input type="date" name="task_date" id="task_date" class="form-control" value="{{ old('task_date') }}">
                         </div>
                     </div>
-
-                    <!-- KPI Sliders -->
-                    <div class="mt-4">
-                        <h5 class="mb-3">🎯 KPI Reviews</h5>
-                        @forelse($user->position->kpis ?? [] as $index => $kpi)
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <div>
-                                    <strong>{{ $kpi->name }}</strong>
-                                    <small class="text-muted">(Weight: {{ $kpi->weight }}%)</small>
-                                </div>
-
-                                <div class="d-flex align-items-center">
-                                    <input type="hidden" name="kpis[{{ $index }}][position_kpi_id]" value="{{ $kpi->id }}">
-                                    <input type="hidden" name="kpis[{{ $index }}][score]" id="star-score-{{ $index }}" value="3">
-
-                                    <div class="star-rating ms-2" data-input-id="star-score-{{ $index }}">
-                                        @for ($i = 1; $i <= 10; $i++)
-                                            <i class="bi bi-star-fill star" data-value="{{ $i }}"></i>
-                                        @endfor
-                                    </div>
-                                    <span class="score-percentage ms-2 text-muted">30%</span>
-                                </div>
-                            </div>
-                        @empty
-                            <p>No KPIs available for this user.</p>
-                        @endforelse
-                    </div>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <strong>There were some problems with your submission:</strong>
