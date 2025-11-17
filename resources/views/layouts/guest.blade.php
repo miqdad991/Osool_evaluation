@@ -11,8 +11,16 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
+        <!-- Theme CSS -->
+        <link rel="stylesheet" href="{{ asset('vendor_assets/css/bootstrap/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor_assets/css/fontawesome.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor_assets/css/style.css') }}">
+
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Theme JS -->
+        <script src="{{ asset('vendor_assets/js/bootstrap.js') }}" defer></script>
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="flex flex-col items-center pt-6 sm:pt-0 ">
