@@ -47,7 +47,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="task_date" class="form-label">Task Date</label>
-                            <input type="date" name="task_date" id="task_date" class="form-control" value="{{ old('task_date') }}">
+                            <input type="date" name="task_date" id="task_date" class="form-control" value="{{ old('task_date') }}" required>
                         </div>
                     </div>
 
